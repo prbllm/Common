@@ -8,6 +8,20 @@
 
 namespace common
 {
+	/*!
+	* \brief Swap two numbers by XOR
+	* \param[in] left left value
+	* \param[in] right right value
+	* \todo std::enable_if
+	*/
+	template<class T>
+	void swapXOR(T& left, T& right)
+	{
+		left ^= right;
+		right ^= left;
+		left ^= right;
+	}
+
 	class Finder final
 	{
 	public:

@@ -81,4 +81,16 @@ namespace tests
 	}
 
 	INSTANTIATE_TEST_CASE_P(CommonTests, CommonFunctionsFinderTests, ::testing::Values(StlContainer::Vector, StlContainer::List));
+
+	using CommonFunctionsSwapTests = ::testing::Test;
+
+	TEST_F(CommonFunctionsSwapTests, IntegerSwapXORTest)
+	{
+		constexpr int x_original{ 10 };
+		constexpr int y_original{ 20 };
+		auto x_temp{ x_original }, y_temp{ y_original };
+		common::swapXOR(x_temp, y_temp);
+		ASSERT_EQ(x_temp, y_original);
+		ASSERT_EQ(y_temp, x_original);
+	}
 }
