@@ -1,6 +1,6 @@
 #include "pch.h"
 
-#include "common_functions.h"
+#include "include/common_functions.h"
 
 #include <list>
 
@@ -45,7 +45,7 @@ namespace tests
 
 		void CheckMaxConsecutiveFinder() const
 		{
-			ASSERT_FALSE(m_data.empty()) << "Test data cann't be empty.";
+			ASSERT_FALSE(m_data.empty()) << "Test data can not be empty.";
 
 			const auto run = [this](const std::pair<unsigned int, std::vector<int>>& data)
 			{
@@ -86,11 +86,11 @@ namespace tests
 
 	TEST_F(CommonFunctionsSwapTests, IntegerSwapXORTest)
 	{
-		constexpr int x_original{ 10 };
-		constexpr int y_original{ 20 };
-		auto x_temp{ x_original }, y_temp{ y_original };
-		common::swapXOR(x_temp, y_temp);
-		ASSERT_EQ(x_temp, y_original);
-		ASSERT_EQ(y_temp, x_original);
+		constexpr int xOriginal{ 10 };
+		constexpr int yOriginal{ 20 };
+		auto xTemp{ xOriginal }, yTemp{ yOriginal };
+		common::swapXOR(xTemp, yTemp);
+		ASSERT_EQ(xTemp, yOriginal);
+		ASSERT_EQ(yTemp, xOriginal);
 	}
 }

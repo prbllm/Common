@@ -32,7 +32,7 @@ namespace common
 		* \return max consecuteve of value
 		*/
 		template<class T, class... Rest, template <class, class...> class Container>
-		static NO_DISCARD unsigned int findMaxConsecutive(const Container<T, Rest...>& data, T value)
+		static [[nodiscard]] unsigned int findMaxConsecutive(const Container<T, Rest...>& data, T value)
 		{
 			unsigned int maxResult{ 0 }, tempResult{ 0 };
 			for (const auto& num : data)
@@ -84,7 +84,7 @@ namespace common
 				res += "( empty )";
 				return res;
 			}
-			
+
 			for (const auto& value : data)
 			{
 				res += std::to_string(value) + separator;
